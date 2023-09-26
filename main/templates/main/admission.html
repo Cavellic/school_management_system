@@ -1,0 +1,60 @@
+{% extends 'main/main.html' %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'fontawesome-free-6.4.0-web/css/all.css' %}">
+
+{% block content %}
+
+<div class="about mt-0 mb-5">
+  <div class="row">
+    
+  </div>
+  <div class="admissions container">
+    
+    <h2 style="color: white; background-color: rgb(26, 25, 42);" class="h2-response fw-bold text-center my-2 heading">
+      ADMISSIONS
+    </h2>
+    <div class="banner">
+      <img style="height: auto; width: 100%;" src="{% static 'images/IMG_20230608_112157_163~2.jpg' %}" alt="">
+    </div>
+
+    <p class="text-center w-responsive mx-auto mb-1 mt-3">
+      Choosing a school for your child is a very important decision. In today's fast-changing world, it is
+      incredibly important for schools to provide
+      a balanced educational foundation to prepare young adults for their journey into this world.
+      We passionately believe that Cornerstone College Westgate, Harare is such a school.
+      <br>
+      <br>
+      For information on our fees and enrolment please contact our <br> Administration Office on: + 263 775 365 968 or <br>
+       + 263 719 603 022
+      or <br> email: (email-required)
+    </p>
+    <br>
+    <br>
+    <h2 class="h2-response fw-bold text-center my-2">
+      Admission Process
+    </h2>
+
+    <p>
+    <ol>
+      <li>Come and visit us</li>
+      <p> Visit us at Cornerstone College Westgate Harare. We are open everyday from 8am to 5pm</p>
+      <li>Register and confirm interest</li>
+      <p>After visiting, you can make your interest in the school clear by registering with us
+        by completing an Admission Form. </p>
+      <li>Accept your offer</li>
+      <p>If you fulfill the entry requirements-Congratulations! We will make you an offer of a place. </p>
+    </ol>
+    </p>
+
+    <div class="d-grid gap-2 col-6 mx-auto buttons">
+      <button class="btn btn-primary" type="button">
+        <a style="color: white;" href="{% url 'onlineApp' %}">Apply Online</a>
+      </button>
+      <button class="btn btn-primary" type="button">Application Form</button>
+    </div>
+  </div>
+</div>
+    {% endblock content %}

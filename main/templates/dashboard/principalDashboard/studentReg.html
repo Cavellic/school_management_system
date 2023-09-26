@@ -1,0 +1,210 @@
+{% extends 'dashboard/basePrincipalDashboard.html' %}
+
+{% load static %}
+
+<!--css-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<!--font-awesome-->
+<link rel="stylesheet" href="{% static 'fontawesome-free-6.4.0-web/css/all.min.css' %}">
+
+<!--Bootstrap-->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<!--material icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+outline" rel="stylesheet">
+
+{% block content %}
+
+<!--main-->
+<main class="main-container">
+    <div class="main-title">
+        <h4>Register new student</h4>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Success</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center text-success mt-3">
+                        <i style="color: green; font-size: 95px;" class="fa fa-check-circle text-center"></i>
+                    <br>
+                    <h5 class="mt-3">
+                        Student has been successfully registered
+                    </h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form action="" method="post" class="bg-dark text-white mt-4" style="background-color: transparent !important; border: thin solid grey; padding: 15px; border-radius: 8px;">
+        <h2 class="h2-response fw-bold text-center my-1">
+            <u>ENROLMENT FORM</u>
+        </h2>
+        {% csrf_token %}
+        <ol>
+            <li><u>DETAILS OF THE STUDENT</u></li>
+            <p>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        {{form.first_name.label}}
+                        {{form.first_name}}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        {{form.last_name.label}}
+                        {{form.last_name}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input -->
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-outline mb">
+                        {{form.residential_address.label}}
+                        {{form.residential_address}}
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        {{form.postal_address.label}}
+                        {{form.postal_address}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email input -->
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        {{form.tel_number.label}}
+                        {{form.tel_number}}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!-- Number input -->
+                    <div class="form-outline">
+                        {{form.sex.label}}
+                        {{form.sex}}
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        {{form.date_of_birth.label}}
+                        {{form.date_of_birth}}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{form.id_number.label}}
+                        {{form.id_number}}
+                    </div>
+
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        {{form.birth_entry_number.label}}
+                        {{form.birth_entry_number}}
+                    </div>
+                    <div class="col-md-6">
+                        {{form.level.label}}
+                        {{form.level}}
+                    </div>
+                </div>
+
+                </p>
+
+                <li class="mt-4"><u>DETAILS OF THE PERSON RESPONSIBLE FOR THE PAYMENT OF FEES </u></li>
+                <p>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        {{form.guardian_first_name.label}}
+                        {{form.guardian_first_name}}
+                    </div>
+                    <div class="col-md-6">
+                        {{form.guardian_last_name.label}}
+                        {{form.guardian_last_name}}
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <!-- Text input -->
+                    <div class="col-md-6">
+                        {{form.guardian_residential_address.label}}
+                        {{form.guardian_residential_address}}
+                    </div>
+                    <!-- Text input -->
+                    <div class="col-md-6">
+                        {{form.guardian_postal_address.label}}
+                        {{form.guardian_postal_address}}
+                    </div>
+
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        {{form.home_tel.label}}
+                        {{form.home_tel}}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{form.email.label}}
+                        {{form.email}}
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        {{form.employer_name.label}}
+                        {{form.employer_name}}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{form.employer_tel.label}}
+                        {{form.employer_tel}}
+                    </div>
+                </div>
+
+                <!-- Number input -->
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        {{form.position_held.label}}
+                        {{form.position_held}}
+                    </div>
+                    <div class="col-md-6">
+                        {{form.employer_address.label}}
+                        {{form.employer_address}}
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    
+                    
+                </div>
+                </p>
+                <!-- Submit button -->
+                
+                <button style="margin-right: auto; margin-left: auto; width: 30%;" type="submit-button" class="btn btn-outline-light btn-lg px-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Submit
+                </button>
+            </row>
+        </ol>
+
+    </form>
+
+</main>
+<!--end main-->
+
+{% endblock content %}

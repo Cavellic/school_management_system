@@ -1,0 +1,67 @@
+{% extends 'dashboard/basePrincipalDashboard.html' %}
+
+{% load static %}
+
+<!--css-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<!--font-awesome-->
+<link rel="stylesheet" href="{% static 'fontawesome-free-6.4.0-web/css/all.min.css' %}">
+
+<!--Bootstrap-->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<!--material icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+outline" rel="stylesheet">
+
+{% block content %}
+
+<!--main-->
+<main class="main-container">
+    <div style="color: #fff;" class="class_info">
+
+        <h2>{{classes}}</h2>
+        <br>
+        <h4>Class Teacher: {{classes.class_teacher}}</h4>
+        <br>
+        <h4>Students</h4>
+        <br>
+        <table class="product-catalogue-table mt-2" border="1">
+            <tr class="th-row">
+                <th>Reg Number</th>
+                <th>First name</th>
+                <th>Lastname</th>
+                <th>ID Number</th>
+                <th>Sex</th>
+            </tr>
+    
+            {% for student in students %}
+            <tr style="color: black; background-color: lightgoldenrodyellow;" class="table-data">
+                <td style="padding: 10px;">{{student.id}}</td> &nbsp;
+                <td>{{student.first_name}}</td>
+                <td>{{student.last_name}}</td>
+                <td>{{student.id_number}}</td>
+                <td>{{student.sex}}</td>
+                <td>
+                    <a href="{% url 'reportCard' student.id %}"
+                        style="color: blue; font-size: 20px; text-decoration: none;">
+                        <abbr title="More Info"><i class="fa fa-circle-info"></i></abbr>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a style="margin-right: auto; margin-left: auto;" href="{% url 'adminDashboard' %}">
+            <button style="margin-top: 50px; background-color:#d58d18; margin-right: auto; margin-left: auto; width: 20%; padding: 10px;" type="button" class="btn " >
+                Close
+            </button>
+        </a>
+
+    </div>
+
+    {{ redirect_to_login_immediately }}
+
+
+</main>
+
+{% endblock content %}

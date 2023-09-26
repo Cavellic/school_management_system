@@ -1,0 +1,145 @@
+{% extends 'main/main.html' %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'fontawesome-free-6.4.0-web/css/all.css' %}">
+{% block content %}
+
+<main id="subjects">
+    <div class="subjects mb-5">
+        <div class="container pt-2">
+            <h2 style="padding-top: 12px; color: azure; background-color: rgb(9, 7, 39);width: 100%; height: 70px; border-radius: 5px;"
+                class="h2-response fw-bold text-center ">
+                Subjects
+            </h2>
+
+            <h6 class="pt-3">Below are the subjects that we offer as Cornerstone College Westgate Harare. <br>
+                <br>
+                <strong>NB-Note that we offer Cambridge subjects as well </strong>
+            </h6>
+            
+            <div class="row pt-4" style="background-color: rgb(69, 72, 75);">
+                
+                <div class="col-md-6">
+                    <img class="img-fluid h-80" src="{% static 'images/computers1~2.jpg'%}" alt="">
+                </div>
+
+                <div class="col-md-6" style="color: white; background-color: rgb(9, 7, 39); border-radius: 5px;">
+                    <h3>IGCSE Subjects</h3>
+                    <p>
+                        All pupils take a minimum of 8 (eight) subjects at IGCSE.
+                        <br>
+                        <br>
+                        Compulsory subjects are:
+                        <ol>
+                            <li>Mathematics</li>
+                            <li>Combined Science</li>
+                            <li>English</li>
+                        </ol>
+    
+                        In addition to these, a student is allowed to study the following subjects;
+    
+                        <ul class="pt-2">
+                            <div class="text-start subjects">
+                            
+                                <div class="row">
+                                    <div class="col">
+                                        <li>Accounts</li>
+                                        <li>Computers</li>
+                                        <li>Geography</li>
+                                        <li>History</li>
+                                        <li>Heritage</li>
+                                        <li>Shona</li>
+                                    </div>
+    
+                                    <div class="col">
+                                        <li>BES</li>
+                                        <li>Chemisty</li>
+                                        <li>Physics</li>
+                                        <li>Biology</li>
+                                        <li>Family and Religious Education</li>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row pt-4" style="background-color: rgb(69, 72, 75)">
+
+                <div class="col-md-6" style="color: white; background-color: rgb(9, 7, 39); border-radius: 5px;">
+                    <h3>A Level Subjects</h3>
+                    <p>
+                        Subject choices are determined by IGCSE results. All pupils take a minimum of 3 (three) subjects at A Level.
+                        <br>
+                        <br>
+                        Compulsory subject is AS English Language.
+                        <br>
+                        <br>
+                        Subjects Offered
+                        <ul>
+                            <div class="row ">
+                                <div class="col-md-3">
+                                    <u>Arts</u>
+                                    <ol>
+                                        <li>History</li>
+                                        <li>Shona</li>
+                                        <li>Geography</li>
+                                        <li>Literature</li>
+                                        <li>FRS</li>
+                                    </ol>
+                                </div>
+                                <div class="col-md-4">
+                                    <u>Commercials</u>
+                                    <ol>
+                                        <li>BES</li>
+                                        <li>Accounting</li>
+                                        <li>Economics</li>
+                    
+                                    </ol>
+                                </div>
+                                <div class="col-md-4">
+                                    <u>Sciences</u>
+                                    <ol>
+                                        <li>Physics</li>
+                                        <li>Chemistry</li>
+                                        <li>Pure Maths</li>
+                                        <li>Biology</li>
+                                        <li>Geography</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </ul>
+
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <img style="height: 400px; width: 100%;" class="img-fluid h-80" src="{% static 'images/IMG_20230608_111622_683~2.jpg' %}" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+<div class="container">
+    <div style="gap: 200px;" class="row logos">
+      
+        <img style="height: 150px; width: 180px;" src="{% static 'images/Zimsec-Logo.png' %}" alt="">
+     
+      
+        <img style="height: 150px; width: 180px;" src="{% static 'images/Cambridge-International-Exams-logo.png' %}" alt="">
+      
+        <img style="height: 150px; width: 180px;" src="{% static 'images/ezgif.com-gif-maker3-1.webp' %}" alt="">
+     
+      
+    </div>
+  </div>
+
+{% endblock content %}

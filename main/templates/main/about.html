@@ -1,0 +1,69 @@
+{% extends 'main/main.html' %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'fontawesome-free-6.4.0-web/css/all.css' %}">
+{% block content %}
+<main id="about">
+    <div class="about mb-5">
+      <div class="container pt-2">
+        <h2 style="padding-top: 12px; color: azure; background-color: rgb(113, 117, 123);width: 100%; height: 70px;border-radius: 5px; padding-top:12+px; background-color: rgb(98, 100, 102);" class="h2-response fw-bold text-center ">
+          About Us
+        </h2>
+
+        <div style="background-color: rgb(230, 234, 240);" class="row">
+            <div class="col-md-6 align-items-center">
+                <img class="img-fluid h-80" src="{% static 'images/IMG_20230523_105118_956~3.jpg'%}" alt="">
+            </div>
+          
+              <div class="col-md-6 pt-5">
+                <div style="padding: 15px; border-radius: 5px; background-color: rgb(199, 214, 215);" class="text-start">
+                  <p class="lh-base">
+                    <h4>Our Vision</h4>
+                    To become the school of academic excellence, the school of choice which is second to none.
+                  <br>
+                  <br>
+  
+                    <h4 class="pt-5">Our Mission</h4>
+                    To satisfy our stakeholders by providing quality and consistent Education driven by hard 
+                    work and professionalism.
+                  </p>
+  
+                </div>
+                
+              </div>
+        </div>
+
+        <div style="background-color: rgb(230, 234, 240);" class="row pt-5">
+            <div class="col-md-6">
+                <div style="padding: 15px; border-radius: 5px; background-color: rgb(199, 214, 215);" class="text-start ">
+                    <h3>Our Core Values</h3>
+                <p>
+                    We will be modelled and defined by these Ignatian time-tested values:
+                    <ul>
+                        <li>Hard work</li>
+                        <li>Team work</li>
+                        <li>Professionalism</li>
+                        <li>Consistency</li>
+                        <li>Selflessness</li>
+                    </ul>
+                    <h3>Our Motto</h3>
+                    <p>
+                        <q>Journey to Success</q>
+                        <br>
+                        Luke 20:17 <q>The rejected Stone</q>
+                    </p>
+                </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+              <img class="img-fluid h-80" src="{% static 'images/IMG_20230608_105146_688~3.jpg'%}" alt="">
+            </div>
+        </div>
+        
+
+      </div>
+    </div>
+</main>
+{% endblock content %}

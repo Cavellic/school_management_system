@@ -1,0 +1,114 @@
+{% extends 'dashboard/basePrincipalDashboard.html' %}
+
+{% load static %}
+
+<!--css-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<!--font-awesome-->
+<link rel="stylesheet" href="{% static 'fontawesome-free-6.4.0-web/css/all.min.css' %}">
+
+<!--Bootstrap-->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<!--material icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+outline" rel="stylesheet">
+
+{% block content %}
+
+<!--main-->
+<main class="main-container">
+
+    <div class="main-title">
+        <h3>DASHBOARD</h3>
+    </div>
+
+    <div class="main-cards" style="position: relative;">
+        <div class="card">
+            <div class="card-inner text-center" style="padding-left: 40px; background-color: rgb(76, 136, 214); width: 100%; text-align: center; border-radius: 10px;">
+                <h4>Students</h4>
+
+            </div>
+            <p>
+            <h4>Total: {{all_students}}</h4>
+            </p>
+            <p>
+                <a class="btn btn-secondary mt-3" href="{% url 'viewStudents' %}" role="button">
+                    &nbsp;&nbsp;More Info</a>
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-inner text-center" style="padding-left: 40px; background-color: rgb(197, 129, 12); width: 100%; text-align: center; border-radius: 10px;">
+                <h3>Teachers</h3>
+            </div>
+            <p>
+            <h4>
+                Total: {{all_teachers}}
+            </h4>
+            </p>
+            <p>
+                <a class="btn btn-secondary mt-3" href="{% url 'all_teachers' %}" role="button">
+                    &nbsp;&nbsp;More Info</a>
+
+            </p>
+
+
+        </div>
+        
+        <div class="card">
+            <div class="card-inner" style="background-color: rgb(57, 142, 57); width: 100%; padding: 0 0 0 10px; text-align: center; border-radius: 10px;">
+                <h3>Online Applications</h3>
+                {{approved}}
+            </div>
+            <div class="data mt-3">
+                <h5>Pending: <strong>{{pending_applications}}</strong></h5> 
+            
+            <h5>Approved: <strong>{{approved_applications}}</strong></h5>
+                
+            <h5>Declined: <strong>{{declined_applications}}</strong></h5>
+            </div>
+
+            <p>
+                <a class="btn btn-secondary mt-3" href="{% url 'onlineApplications' %}" role="button">
+                    &nbsp;&nbsp;View</a>
+            </p>
+
+        </div>
+
+        <div class="card">
+            <div class="card-inner text-center" style="padding-left: 15px; background-color: rgb(217, 33, 33); width: 100%; text-align: center; border-radius: 10px;">
+
+                <h4>Examination Timetable</h4>
+
+            </div>
+            <h5>Coming examination timetable</h5>
+            <p>
+                <a class="btn btn-secondary mt-3" href="{% url 'home' %}" role="button">
+                    &nbsp;&nbsp;Enter</a>
+            </p>
+        </div>
+    </div>
+
+    <h2 class="text-white mt-5">Overview</h2>
+
+    <div class="charts">
+        <div class="charts-card">
+            <h3 class="chart-title">Students | Teachers Overview</h3>
+            <div id="admin-pie-chart">
+
+            </div>
+        </div>
+
+        <div class="charts-card">
+            <h3 class="chart-title">Students Per Each Level</h3>
+            <div id="bar-chart">
+            </div>
+        </div>
+    </div>
+
+    {{ redirect_to_login_immediately }}
+
+
+</main>
+
+{% endblock content %}

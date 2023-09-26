@@ -1,0 +1,67 @@
+{% extends 'dashboard/basePrincipalDashboard.html' %}
+
+{% load static %}
+
+<!--css-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<!--font-awesome-->
+<link rel="stylesheet" href="{% static 'fontawesome-free-6.4.0-web/css/all.min.css' %}">
+
+<!--Bootstrap-->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<!--material icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+outline" rel="stylesheet">
+
+{% block content %}
+
+<!--main-->
+<main class="main-container">
+
+    <!-- Submit button -->
+    <div class="row"
+        style="line-height: 2.5rem; padding: 0 10px 10px 10px; color: #c3c3c3; background-color: #23254f; width: 80%; border-radius: 5px; margin-left: auto; margin-right: auto;"
+        class="delete delete-centered mt-3">
+        <br>
+
+        <p>
+            EC No.: &nbsp;{{teacher.ec_number}}
+            <br>
+            First Name: &nbsp;{{teacher.first_name}}
+            <br>
+            Last Name: &nbsp;{{teacher.last_name}}
+            <br>
+            ID Number: &nbsp;{{teacher.id_number}}
+            <br>
+            Gender: &nbsp;{{teacher.gender}}
+
+            {{stud_class.name}}
+            <br>
+            Subjects:&nbsp;
+            {% for subject in subjects %}
+             {{subject.name}},
+            {% endfor %}
+            <br>
+            <br>
+
+
+            <a href="{% url 'updateTeacher' teacher.id %}">
+                <input style="width: 150px;" type="button" class="btn btn-success" value="Edit">
+            </a>
+            &nbsp;&nbsp;
+            <a href="{% url 'all_teachers' %}">
+                <input style="width: 150px;" type="button" class="btn btn-warning" value="Close">
+            </a>
+        </p>
+
+       
+
+    </div>
+
+
+
+</main>
+<!--end main-->
+
+{% endblock content %}

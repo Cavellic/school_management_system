@@ -1,0 +1,88 @@
+{% extends 'dashboard/basePrincipalDashboard.html' %}
+
+{% load static %}
+
+<!--css-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<!--font-awesome-->
+<link rel="stylesheet" href="{% static 'fontawesome-free-6.4.0-web/css/all.min.css' %}">
+
+<!--Bootstrap-->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<!--material icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+outline" rel="stylesheet">
+
+{% block content %}
+
+<!--main-->
+<main class="main-container">
+
+    <!-- Submit button -->
+    <div class="row"
+        style="line-height: 2.5rem; padding: 0 10px 10px 10px;color: #c3c3c3; background-color: #23254f; width: 90%; border-radius: 5px; margin-left: auto; margin-right: auto;"
+        class="delete delete-centered mt-3">
+        <br>
+        <p>
+            <div style="font-size: 17px;" class="col-md-6">
+                <h5><u>Student</u></h5>
+                First name: &nbsp;&nbsp; {{applicant.first_name}}
+                <br>
+                Last name: &nbsp;&nbsp; {{applicant.last_name}}
+                <br>
+                Residential address: &nbsp;&nbsp; {{applicant.residential_address}}
+                <br>
+                Postal Address: &nbsp;&nbsp; {{applicant.postal_address}}
+                <br>
+                Telephone number: &nbsp;&nbsp; {{applicant.tel_number}}
+                <br>
+                Sex: &nbsp;&nbsp; {{applicant.sex}}
+                <br>
+                Date of birth: &nbsp;&nbsp; {{applicant.date_of_birth}}
+                <br>
+                Id Number: &nbsp;&nbsp; {{applicant.id_number}}
+                <br>
+                Birth entry number: &nbsp;&nbsp; {{applicant.birth_entry_number}}
+                <br>
+                Attached File: &nbsp;&nbsp; {{applicant.applicant_file}}
+            </div>
+
+            <div style="font-size: 17px;" class="col-md-6">
+                <h5><u>Guardian</u></h5>
+                First name: &nbsp;&nbsp; {{applicant.guardian_first_name}}
+                <br>
+                Last name: &nbsp;&nbsp; {{applicant.guardian_last_name}}
+                <br>
+                Residential address:&nbsp;&nbsp; {{applicant.guardian_residential_address}}
+                <br>
+                Postal address: &nbsp;&nbsp; {{applicant.guardian_postal_address}}
+                <br>
+                Home telephone: &nbsp;&nbsp; {{applicant.home_tel}}
+                <br>
+                Email address: &nbsp;&nbsp; {{applicant.email}}
+                <br>
+                Employer name: &nbsp;&nbsp; {{applicant.employer_name}}
+                <br>
+                Employer telephone: &nbsp;&nbsp; {{applicant.employer_tel}}
+                <br>
+                Position held: &nbsp;&nbsp; {{applicant.position_held}}
+                <br>
+                Employer address: &nbsp;&nbsp; {{applicant.employer_address}}
+
+            </div>
+        </p>
+
+            <a href="{% url 'onlineApplications' %}">
+                <button style="width: 150px; padding: 10px;" type="button" class="btn btn-warning" >
+                    Close
+                </button>
+            </a>
+    </div>
+    
+
+
+</main>
+<!--end main-->
+
+{% endblock content %}

@@ -1,0 +1,105 @@
+{% extends 'dashboard/baseTeacherDashboard.html' %}
+
+{% load static %}
+
+<!--css-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<!--font-awesome-->
+<link rel="stylesheet" href="{% static 'fontawesome-free-6.4.0-web/css/all.min.css' %}">
+
+<!--Bootstrap-->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<!--material icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+outline" rel="stylesheet">
+
+{% block content %}
+
+<!--main-->
+<main class="main-container">
+    <div class="main-title">
+        <h3>DASHBOARD</h3>
+        
+    </div>
+    <div class="main-cards">
+        <div class="card">
+            <div class="card-inner"
+                style="padding-left: 30px; background-color: rgb(76, 136, 214); width: 100%; text-align: center; border-radius: 10px;">
+                <h4>Class Students</h4>
+
+            </div>
+            <p>
+            <h4>Total: {% for class1 in classs %}
+                {{class1.students.count}}
+                {% endfor %}</h4>
+            </p>
+            <p>
+                <a class="btn btn-secondary mt-3" href="{% url 'home' %}" role="button">
+                    &nbsp;&nbsp;View</a>
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-inner"
+                style="padding-left: 40px; background-color: rgb(197, 129, 12); width: 100%; text-align: center; border-radius: 10px;">
+                <h4>Subjects</h4>
+            </div>
+            <p>
+            <h4>
+                Total: {{subject.count}}
+            </h4>
+            </p>
+            <p>
+                <a class="btn btn-secondary mt-3" href="{% url 'home' %}" role="button">
+                    &nbsp;&nbsp;View</a>
+
+            </p>
+
+
+        </div>
+        <div class="card">
+            <div class="card-inner text-center"
+                style="background-color: rgb(57, 142, 57); width: 100%; padding: 0 0 0 40px; text-align: center; border-radius: 10px;">
+                <h4>Results</h4>
+
+            </div>
+            <h5>Upload student Examination marks</h5>
+            <p>
+                <a class="btn btn-secondary mt-3" href="{% url 'home' %}" role="button">
+                    &nbsp;&nbsp;Enter</a>
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-inner"
+                style="padding-left: 15px; background-color: rgb(217, 33, 33); width: 100%; text-align: center; border-radius: 10px;">
+                <h4>Exam timetables</h4>
+
+            </div>
+            <h5> View upcomig Examination timetable </h5>
+            <p>
+                <a class="btn btn-secondary mt-3" href="{% url 'home' %}" role="button">
+                    &nbsp;&nbsp;View</a>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="charts">
+        <div class="charts-card">
+            <h2 class="chart-title">Pass Rate</h2>
+            <div id="pie-chart">
+
+            </div>
+        </div>
+
+        <div class="charts-card">
+            <h2 class="chart-title">Assignments</h2>
+            <div id="Stackedchart">
+
+            </div>
+        </div>
+    </div>
+</main>
+<!--end main-->
+
+{% endblock content %}

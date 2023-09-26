@@ -1,0 +1,57 @@
+{% extends 'dashboard/basePrincipalDashboard.html' %}
+
+{% load static %}
+
+<!--css-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<!--font-awesome-->
+<link rel="stylesheet" href="{% static 'fontawesome-free-6.4.0-web/css/all.min.css' %}">
+
+<!--Bootstrap-->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<!--material icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+outline" rel="stylesheet">
+
+{% block content %}
+
+<!--main-->
+<main class="main-container">
+
+    <!-- Submit button -->
+    <div class="row">
+        <form action="{% url 'deleteTeacher' teacher.id%}" method="post">
+            {%csrf_token%}
+            <div style="color: #c3c3c3; background-color: #23254f; width: 500px; margin-left: 50px; border-radius: 10px; padding: 10px;" class="delete delete-centered mt-3">
+                <br>
+                <h4>Delete Teacher</h4>
+
+                <p style="padding: 10px; font-size: 16px;">Are you sure you want to delete the teacher,
+                    <br>
+                    <strong style="text-decoration: underline;">{{teacher}}</strong>
+                </p>
+                <br>
+                
+                <div style="padding-bottom: 10px; padding-left: 50px;" class="buttons">
+                    <a href="{% url 'deleteTeacher' teacher.id %}">
+                        <button type="button-submit" class="btn btn-success mt-5">
+                            Confirm
+                        </button>
+                    </a>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                    <a href="{% url 'all_teachers' %}">
+                        <button type="button" class="btn btn-warning mt-5" >
+                            Cancel
+                        </button>
+                    </a>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+
+</main>
+<!--end main-->
+
+{% endblock content %}

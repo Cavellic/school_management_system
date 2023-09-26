@@ -1,0 +1,75 @@
+{% extends 'dashboard/basePrincipalDashboard.html' %}
+
+{% load static %}
+
+<!--css-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<!--font-awesome-->
+<link rel="stylesheet" href="{% static 'fontawesome-free-6.4.0-web/css/all.min.css' %}">
+
+<!--Bootstrap-->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<!--material icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+outline" rel="stylesheet">
+
+{% block content %}
+
+<!--main-->
+<main class="main-container">
+
+    <!-- Submit button -->
+    <div class="row"
+        style="line-height: 2.5rem; padding: 0 10px 10px 10px; color: #d8d6e8; background-color: #343865; width: 90%; border-radius: 5px; margin-left: auto; margin-right: auto;"
+        class="delete delete-centered mt-3">
+        <br>
+        <p>
+            <div style="font-size: 18px;" class="col">
+                {{student.first_name}} {{student.last_name}}
+                <br>
+                Level: &nbsp;&nbsp; {{student.level}}
+                <br>
+
+    
+                <table class="product-catalogue-table mt-2" border="2">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Mark</th>
+                        <th>Grade</th>
+                        <th>Remarks</th>
+                        <th>Teacher</th>
+                    </tr>
+                    {% for subject in subjects %}
+                    <tr style="background-color: lightgoldenrodyellow; color: black;" class="table-data">
+                        <td style="padding: 10px;">{{subject.subject.name}}</td> &nbsp;
+                        <td>{{subject.mark}}%</td>
+                        <td>{{subject.grade}}</td>
+                        <td>{{subject.remarks}}.</td>
+                        <td>{{subject.subject.teacher}}</td>
+                    </tr>
+                    {% endfor %}
+            
+                </table>
+
+                
+            </div>
+            
+        </p>
+        <a style="margin-right: auto; margin-left: auto;" href="{% url 'adminDashboard' %}">
+            <button style="background-color:#d58d18; margin-right: auto; margin-left: auto; width: 20%; padding: 10px;" type="button" class="btn " >
+                Close
+            </button>
+        </a>
+
+        
+       
+            
+    </div>
+    
+
+
+</main>
+<!--end main-->
+
+{% endblock content %}
